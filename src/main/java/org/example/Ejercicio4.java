@@ -1,10 +1,12 @@
 package org.example;
 
+import org.junit.jupiter.api.Test;
+
 import javax.xml.soap.*;
 
 public class Ejercicio4 {
 
-    private  static final String ENPOINT_DEFAULT = "http://websamples.countryinfo/CountryInfoService.wso";
+    private  static final String ENPOINT_DEFAULT = "http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso";
 
     public void countryName (String isoPais) {
         try {
@@ -104,6 +106,11 @@ public class Ejercicio4 {
         }catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
+    }
+
+    @Test
+    public void testCountryName () throws SOAPException {
+        countryCurrency("AR");;
     }
 }
 
