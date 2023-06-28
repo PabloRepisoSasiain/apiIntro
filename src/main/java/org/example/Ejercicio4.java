@@ -110,7 +110,7 @@ public class Ejercicio4 {
 
     @Test
     public void testCountryName () throws SOAPException {
-        countryCurrency("AR");;
+        countryName("AR");;
     }
 }
 
