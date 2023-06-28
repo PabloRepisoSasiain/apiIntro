@@ -6,7 +6,7 @@ import javax.xml.soap.*;
 
 public class Ejercicio4 {
 
-    private  static final String ENPOINT_DEFAULT = "http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso";
+    private  static final String ENPOINT_DEFAULT = "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso";
 
     public void countryName (String isoPais) {
         try {
@@ -25,9 +25,9 @@ public class Ejercicio4 {
 
             SOAPMessage soapResponse = soapConnection.call(soapMessage, ENPOINT_DEFAULT);
             SOAPBody responseBody = soapResponse.getSOAPBody();
-            SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("CountryNameResponse").item(0);
-            String resultado = responseElement.getTextContent();
-            System.out.println("El pais es: " + resultado);
+            //SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("CountryNameResponse").item(0);
+            //String resultado = responseElement.getTextContent();
+            System.out.println("El pais es: " + responseBody.getTextContent());
         } catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
@@ -50,9 +50,9 @@ public class Ejercicio4 {
 
             SOAPMessage soapResponse = soapConnection.call(soapMessage, ENPOINT_DEFAULT);
             SOAPBody responseBody = soapResponse.getSOAPBody();
-            SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("LanguageNameResponse ").item(0);
-            String resultado = responseElement.getTextContent();
-            System.out.println("El pais es: " + resultado);
+            //SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("LanguageNameResponse ").item(0);
+            //String resultado = responseElement.getTextContent();
+            System.out.println("El pais es: " + responseBody.getTextContent());
         }catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
@@ -75,9 +75,9 @@ public class Ejercicio4 {
 
             SOAPMessage soapResponse = soapConnection.call(soapMessage, ENPOINT_DEFAULT);
             SOAPBody responseBody = soapResponse.getSOAPBody();
-            SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("FullCountryInfoResponse").item(0);
-            String resultado = responseElement.getTextContent();
-            System.out.println("La información del pais es: " + resultado);
+            //SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("FullCountryInfoResponse").item(0);
+            //String resultado = responseElement.getTextContent();
+            System.out.println("La información del pais es: " + responseBody.getTextContent());
         }catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
@@ -100,17 +100,14 @@ public class Ejercicio4 {
 
             SOAPMessage soapResponse = soapConnection.call(soapMessage, ENPOINT_DEFAULT);
             SOAPBody responseBody = soapResponse.getSOAPBody();
-            SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("CountryCurrencyResponse").item(0);
-            String resultado = responseElement.getTextContent();
-            System.out.println("La currency del pais es: " + resultado);
+            //SOAPElement responseElement = (SOAPElement) responseBody.getElementsByTagName("CountryCurrencyResponse").item(0);
+            //String resultado = responseElement.getTextContent();
+            System.out.println("La currency del pais es: " + responseBody.getTextContent());
         }catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
     }
 
-    @Test
-    public void testCountryName () throws SOAPException {
-        countryName("AR");;
-    }
+
 }
 
