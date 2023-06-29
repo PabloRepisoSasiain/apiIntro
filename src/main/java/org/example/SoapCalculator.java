@@ -19,6 +19,7 @@ public class SoapCalculator {
             SOAPPart soapPart = soapMessage.getSOAPPart();
             SOAPEnvelope soapEnvelope = soapPart.getEnvelope();
             SOAPBody soapBody = soapEnvelope.getBody();
+
             SOAPElement operationElement = soapBody.addChildElement(operation, "", "http://tempuri.org/");
             SOAPElement intAElement = operationElement.addChildElement("intA");
             intAElement.addTextNode(String.valueOf(intA));
@@ -92,6 +93,16 @@ public class SoapCalculator {
         assertNotNull(value);
         assertTrue(Integer.valueOf(value)>-1);
         assertFalse(Integer.valueOf(value)>5);
+    }
+
+    @Test
+    public void testAssertionNested (){
+        String valor = "Hola mundo";
+        assertAll("Hola",
+                ()-> assertTrue(valor.contains("Hola")),
+                ()-> assertEquals(valor,"Hola mundo")
+                //,()-> assertFalse(valor!=null)
+        );
     }
 
 
