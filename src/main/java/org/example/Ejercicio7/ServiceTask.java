@@ -1,5 +1,7 @@
 package org.example.Ejercicio7;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ServiceTask {
@@ -10,12 +12,16 @@ public class ServiceTask {
         //Con esto creas un usuario y 5 task del A y 5 del B
         int count=0;
         Usuario usuario = createUser();
+        List<TareaA> listaA = new ArrayList<>();
+        List<TareaB> listaB = new ArrayList<>();
         while (count<5){
-            createTaskA(usuario);
             createTaskB(usuario);
+            listaA.add(createTaskA(usuario));
+            listaB.add(createTaskB(usuario));
             count++;
         }
-
+        System.out.println("Lista A: "+listaA);
+        System.out.println("Lista B: "+listaB);
     }
 
     public static Usuario createUser(){
