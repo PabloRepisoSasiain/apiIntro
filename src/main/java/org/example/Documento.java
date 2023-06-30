@@ -1,13 +1,12 @@
 package org.example;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 
 public class Documento {
 
     public void init(){
         try{
+            //ESCRIBIR
             String ruta =".\\";
             String nombreArchivo = "informe.txt";
             String rutaArchivo = ruta+nombreArchivo;
@@ -22,8 +21,31 @@ public class Documento {
             bw.close();
 
 
+
+
         }catch (Exception e){
 
         }
+    }
+
+    public void leer(){
+        try{
+            String ruta =".\\";
+            String nombreArchivo = "informe.txt";
+            String rutaArchivo = ruta+nombreArchivo;
+            File doc = new File(rutaArchivo);
+            FileReader fr = new FileReader(doc);
+            BufferedReader br = new BufferedReader(fr);
+
+            String text = "";
+            while ((text=br.readLine())!=null){
+                System.out.println(text);
+            }
+
+
+        }catch (Exception ex){
+
+        }
+
     }
 }
