@@ -1,0 +1,3 @@
+Artista: nombre: Jose', genero: rap', numeroCanciones: 5, reproducciones: 10, suscriptores: 10, gananciaTotal: 0.2
+Artista: nombre: Paco', genero: DJ', numeroCanciones: 100, reproducciones: 1, suscriptores: 0, gananciaTotal: 0.02
+Artista: nombre: Penélope', genero: jazz', numeroCanciones: 1, reproducciones: 100, suscriptores: 2, gananciaTotal: 2.0
